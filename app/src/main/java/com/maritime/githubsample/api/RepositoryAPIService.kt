@@ -12,7 +12,7 @@ class RepositoryAPIService internal constructor(
 ) : RepositoryDataSource {
 
     override suspend fun getRepo(language: String, since: String): List<Repository>? =
-        withContext(ioDispatcher) { ApiService.getDevelopers(language, since)?.items }
+        withContext(ioDispatcher) { ApiService.getDevelopers(language, since) }
 
     override suspend fun getRepos(id: Long): Repository? {
         TODO("Not yet implemented")
